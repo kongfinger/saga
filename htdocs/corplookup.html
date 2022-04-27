@@ -1,0 +1,32 @@
+<html>
+<head>
+<script>
+function hh(str) {
+  if (str == "") {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  } else {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("txtHint").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET","look.php?q="+str,true);
+    xmlhttp.send();
+  }
+}
+</script>
+</head>
+<body>
+
+ <form action="look.php" method="get">
+  <label for="fn">symbol</label><br>
+  <input type="text" id="fn" name="fn"><br>
+ <button type="submit" onclick="hh(fn.text)">
+</form> 
+<br>
+<div id="txtHint"><b>accounting reports will be listed here...</b></div>
+
+</body>
+</html> 
