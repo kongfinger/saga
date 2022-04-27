@@ -1,0 +1,88 @@
+
+<html>
+<head>
+<script>
+function showCD(str) {
+  if (str=="") {
+    document.getElementById("txtHint").innerHTML="";
+    return;
+  }
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("txtHint").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","alphavan.php?q="+str,true);
+  xmlhttp.send();
+}
+
+function shs(str) {
+  if (str=="") {
+    document.getElementById("txtHint").innerHTML="";
+    return;
+  }
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("txtHint").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","alphavan.php?q="+str,true);
+  xmlhttp.send();
+}
+</script>
+</head>
+<body>
+
+<form>
+Select a country:
+<select name="countries" onchange="showCD(this.value)">
+<option value="Canada">Canada</option>
+<option value="India">India</option>
+<option value="China">China</option>
+<option value="South Korea">South Korea</option>
+<option value="Hong Kong">Hong Kong</option>
+<option value="Malaysia">Malaysia</option>
+<option value="France">France</option>
+<option value="Taiwan">Taiwan</option>
+<option value="Germany">Germany</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="Mexico">Mexico</option>
+<option value="Spain">Spain</option>
+<option value="Sweden">Sweden</option>
+<option value="Indonesia">Indonesia</option>
+<option value="Australia">Australia</option>
+<option value="Thailand">Thailand</option>
+<option value="Switzerland">Switzerland</option>
+<option value="Ireland">Ireland</option>
+<option value="Singapore">Singapore</option>
+<option value="USA">USA</option>
+<option value="Italy">Italy</option>
+<option value="Argentina">Argentina</option>
+<option value="Greece">Greece</option>
+<option value="Denmark">Denmark</option>
+<option value="Netherlands">Netherlands</option>
+<option value="Brazil">Brazil</option>
+<option value="New Zealand">New Zealand</option>
+<option value="Venezuela">Venezuela</option>
+<option value="Austria">Austria</option>
+<option value="Belgium">Belgium</option>
+<option value="Israel">Israel</option>
+<option value="Qatar">Qatar</option>
+<option value="Russia">Russia</option>
+<option value="Norway">Norway</option>
+<option value="Finland">Finland</option>
+<option value="Turkey">Turkey</option>
+<option value="Portugal">Portugal</option>
+<option value="Lithuania">Lithuania</option>
+<option value="Estonia">Estonia</option>
+<option value="Latvia">Latvia</option>
+<option value="Iceland">Iceland</option>
+  
+</select>
+</form>
+<div id="txtHint"><b>corporation info will be listed here</b></div>
+
+</body>
+</html> 
